@@ -1,7 +1,5 @@
-﻿using System.Linq;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
-using pointcache.UI.MonoFSM;
 using System.IO;
 using System.Text;
 using System;
