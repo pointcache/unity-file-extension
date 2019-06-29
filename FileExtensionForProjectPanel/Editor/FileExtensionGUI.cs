@@ -12,11 +12,15 @@ public class FileExtensionGUI
     private static GUIStyle style;
     private static StringBuilder sb = new StringBuilder();
     private static string selectedGuid;
-    private static HashSet<string> ignore = new HashSet<string>()
+    private static HashSet<string> showExt = new HashSet<string>()
     {
-        ".asset",
-        ".unity",
-        ".cs"
+        ".tga",
+        ".psd",
+        ".png",
+        ".jpg",
+        ".raw",
+        ".fbx",
+        ".obj",
     };
 
     static FileExtensionGUI()
@@ -39,7 +43,7 @@ public class FileExtensionGUI
     {
         string path = AssetDatabase.GUIDToAssetPath(guid);
         string extRaw = Path.GetExtension(path);
-        if (ignore.Contains(extRaw))
+        if (!showExt.Contains(extRaw))
             return;
 
         bool selected = false;
